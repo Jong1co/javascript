@@ -1,0 +1,38 @@
+startBtn.addEventListener('click', () => {
+        let i = 10;
+        startBtn.innerHTML = '<i class="fa-solid fa-stop"></i>';
+        makingSpace.style.visibility = 'visible';
+        const interval = setInterval(() => {
+            if(i >= 0){
+                headerTimer.innerHTML = `0 : ${i}`;
+                i--;
+            } else {
+                endGame.style.display = 'block';
+                console.log('hi');
+                clearInterval(interval);
+            }
+        }, 1000);
+        let toggle = true;
+        startBtn.onclick = (e) => {
+            if (startBtn.innerHTML = '<i class="fa-solid fa-stop"></i>'){
+                console.log('hi');
+                clearInterval(interval);
+                endGame.style.display = 'block';
+                startBtn.innerHTML = '<i class="fa-solid fa-play"></i>'
+                toggle = false;
+            } else {
+                interval = setInterval(() => {
+                    if(i >= 0){
+                        headerTimer.innerHTML = `0 : ${i}`;
+                        i--;
+                    } else {
+                        endGame.style.display = 'block';
+                        console.log('hi');
+                        clearInterval(interval);
+                    }
+                }, 1000);
+                toggle = true;
+            }
+        }
+
+    });
