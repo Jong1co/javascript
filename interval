@@ -1,0 +1,15 @@
+startBtn.addEventListener('click', () => {
+    makingSpace.style.visibility = 'visible';
+    const interval = setInterval(() => {
+        if(i >= 0){
+            headerTimer.innerHTML = `0 : ${i}`;
+            i--;
+        } else {
+            endGame.style.display = 'block';
+            console.log('hi');
+            clearInterval(interval);
+            //'hi' 한 번 출력 후 interval 정지
+            // 외부에 선언한 interval을 내부에서 정지할 수 있음
+        }
+    }, 1000);
+});
